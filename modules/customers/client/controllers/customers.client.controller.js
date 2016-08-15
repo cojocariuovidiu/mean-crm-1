@@ -10,7 +10,7 @@
 
   function CustomersController ($scope, $state, Authentication, customer) {
     var vm = this;
-
+    
     vm.authentication = Authentication;
     vm.customer = customer;
     vm.error = null;
