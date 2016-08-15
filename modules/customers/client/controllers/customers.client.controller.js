@@ -9,6 +9,7 @@
   CustomersController.$inject = ['$scope', '$state', 'Authentication', 'customerResolve'];
 
   function CustomersController ($scope, $state, Authentication, customer) {
+    // serialize forms
     var vm = this;
     
     vm.authentication = Authentication;
