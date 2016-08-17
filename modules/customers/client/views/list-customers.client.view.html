@@ -7,19 +7,20 @@
     <div class="input-group input-group-lg">
       <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
+        <button class="btn btn-default" type="button">Search</button>
       </span>
     </div><!-- /input-group -->
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-4 text-center">
-      <button type="button" class="btn btn-success text-center">
+      <button type="button" class="btn btn-success text-center" data-ui-sref="customers.create">
         <i class="glyphicon glyphicon-user"></i><br>
         New Customer
       </button>
     </div>
   </div>
-  
+  <br>
+  <br>
   <div class="list-group">
     <div class="col-xs-6 col-sm-4" data-ng-repeat="customer in vm.customers | filter:searchText">
       <a data-ui-sref="customers.view({ customerId: customer._id })" 
@@ -32,6 +33,11 @@
             <h4>{{customer.firstName}} {{customer.lastName}}</h4>
             <small class="list-group-item-text text-muted">
               <span data-ng-bind="customer.created | date:'mediumDate'"></span>
+              <span class="pull-right">
+                <button class="btn btn-default btn-sm" data-ng-click="vm.remove()">
+                  <i class="glyphicon glyphicon-trash"></i>
+                </button>
+              </span>
             </small>
           </div>
         </div>

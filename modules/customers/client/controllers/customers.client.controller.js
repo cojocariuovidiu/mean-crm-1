@@ -41,7 +41,7 @@
       }
 
       function successCallback(res) {
-        $state.go('customers.view', {
+        $state.go('customers.list', {
           customerId: res._id
         });
       }
